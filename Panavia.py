@@ -1,35 +1,19 @@
 # Panavia by Alex Arbuckle #
 
 
+from panaviaTabs.tabsHome import home
+from panaviaTabs.tabsOpen import open
+from panaviaTabs.tabsCreate import create
+from panaviaFunctions.functionsGetJSON import getJSON
+
 import dash
-from json import dump, load
-#from panaviaHome import home
-#from panaviaLoad import load
-#from panaviaCreate import create
-import plotly.figure_factory as ff
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-def setJSON(arg):
-    '''  '''
-
-    with open('panaviaData.json', 'w') as fileVariable:
-
-        dump(fileVariable, arg, indent = 4)
-
-
-def getJSON(arg):
-    '''  '''
-
-    with open(arg, 'r') as fileVariable:
-
-        return load(fileVariable)
-
-
 app = dash.Dash()
-settings = getJSON('panaviaSettings.json')
+settings = getJSON('settingsStyle.json')
 app.layout = html.Div([
 
     html.Div([
@@ -50,8 +34,8 @@ app.layout = html.Div([
                              style = settings['headerTabOff'],
                              selected_style = settings['headerTabOn']),
 
-                     dcc.Tab(label = 'Load',
-                             value = 'load',
+                     dcc.Tab(label = 'Open',
+                             value = 'open',
                              style = settings['headerTabOff'],
                              selected_style = settings['headerTabOn'])
 
@@ -59,16 +43,16 @@ app.layout = html.Div([
 
     ], style = settings['panaviaMenu']),
 
-    html.Div(id = 'content')
+    html.Div(id = 'tab')
 
 ])
 
 
-@app.callback(Output('content', 'children'), Input('menu', 'value'))
+@app.callback(Output('tab', 'children'), Input('menu', 'value'))
 def contentFunction(tab):
     '''  '''
 
-    return {'home' : home(), 'create' : create(), 'load' : load()}[tab]
+    return {'home' : home(), 'create' : create(), 'open' : open()}[tab]
 
 
 if (__name__ == '__main__'):
