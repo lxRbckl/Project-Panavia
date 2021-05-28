@@ -7,7 +7,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-def home():
+def homeFunction():
     '''  '''
 
     df = px.data.election()
@@ -20,7 +20,6 @@ def home():
 
             px.choropleth_mapbox(data_frame = df,
                                  geojson = geojson,
-                                 color = 'Bergeron',
                                  locations = 'Bergeron',
                                  mapbox_style = 'open-street-map'
 

@@ -7,7 +7,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-def create():
+def createFunction():
     '''  '''
 
     settings = getJSON('settingsStyle.json')

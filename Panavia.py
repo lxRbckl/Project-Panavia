@@ -1,9 +1,9 @@
 # Panavia by Alex Arbuckle #
 
 
-from panaviaTabs.tabsHome import home
-from panaviaTabs.tabsOpen import open
-from panaviaTabs.tabsCreate import create
+from panaviaTabs.tabsHome import homeFunction
+from panaviaTabs.tabsOpen import openFunction
+from panaviaTabs.tabsCreate import createFunction
 from panaviaFunctions.functionsGetJSON import getJSON
 
 import dash
@@ -49,10 +49,10 @@ app.layout = html.Div([
 
 
 @app.callback(Output('tab', 'children'), Input('menu', 'value'))
-def contentFunction(tab):
+def tabFunction(tab):
     '''  '''
 
-    return {'home' : home(), 'create' : create(), 'open' : open()}[tab]
+    return {'home' : homeFunction(), 'create' : createFunction(), 'open' : openFunction()}[tab]
 
 
 if (__name__ == '__main__'):
