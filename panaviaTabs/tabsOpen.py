@@ -10,7 +10,7 @@ from dash.dependencies import Input, Output
 def tabOpen(tab):
     '''  '''
 
-    if (tab != 'open'):
+    if (tab == 'open'):
 
         settings = getJSON('settingsStyle.json')
 
