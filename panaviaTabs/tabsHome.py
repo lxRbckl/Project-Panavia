@@ -2,29 +2,26 @@ from panaviaFunctions.functionsGetJSON import getJSON
 
 import dash
 import plotly.express as px
+import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+import pandas as pd
 
-def homeFunction():
+def tabHome(tab):
     '''  '''
 
-    df = px.data.election()
-    geojson = px.data.election_geojson()
-    settings = getJSON('settingsStyle.json')
+    if (tab == 'home'):
 
-    return html.Div([
+        settings = getJSON('settingsStyle.json')
 
-        html.Div([
+        return html.Div([
 
-            px.choropleth_mapbox(data_frame = df,
-                                 geojson = geojson,
-                                 locations = 'Bergeron',
-                                 mapbox_style = 'open-street-map'
+            html.Div([
 
-            ).show()
+                html.H1('home')
 
-        ], style = settings['homeMap'])
+            ], style = settings['homeMap'])
 
-    ], style = settings['panaviaTab'])
+        ], style = settings['panaviaTab'])

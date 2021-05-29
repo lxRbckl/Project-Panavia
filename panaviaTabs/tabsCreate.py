@@ -7,13 +7,15 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 
 
-def createFunction():
+def tabCreate(tab):
     '''  '''
 
-    settings = getJSON('settingsStyle.json')
+    if (tab == 'create'):
 
-    return html.Div([
+        settings = getJSON('settingsStyle.json')
 
-        html.H1('create')
+        return html.Div([
 
-    ], style = settings['panaviaTab'])
+            html.H1('create')
+
+        ], style = settings['panaviaTab'])
