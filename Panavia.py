@@ -65,10 +65,10 @@ def tabHome(tab):
                 lat = [40.80105],
                 lon = [-73.945155],
                 mode = 'markers',
+                customdata = ['ok'],
                 marker = {'opacity' : 0.5, 'size' : 10},
                 selected = {'marker' : {'opacity' : 1,
-                                        'size' : 15}}
-
+                                        'size' : 15}},
             )],
 
             'layout' : go.Layout(
@@ -99,15 +99,19 @@ def tabHome(tab):
                           config = {'displayModeBar' : False},
                           style = {'borderRadius' : 5})
 
-            ], style = settings['homeMap'])
+            ], style = settings['homeMap']),
+
+            html.H1(id = 'opsen')
 
         ], style = settings['panaviaTab'])
 
-@app.callback(Output('click-data', 'children'), Input('homeMap', 'clickData'))
-def sss(clickData):
+
+@app.callback(Output('opsen', 'children'), Input('homeMap', 'selectedData'))
+def display_click_data(clickdata):
     '''  '''
 
-    print(clickData)
+    print(clickdata)
+    return clickdata
 
 
 def tabCreate(tab):
