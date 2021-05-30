@@ -43,31 +43,12 @@
     },
 
     "homeMap" : {
-        "padding" : 5,
-        "margin" : 5,
-        "borderRadius" : 5,
+        "border" : "2.5px solid #282828",
         "backgroundColor" : "#181818",
-        "border" : "2.5px solid #282828"
+        "borderRadius" : 5,
+        "margin" : 5
     },
 
-    "homeColorScale": [
-        "#f7fbff",
-        "#ebf3fb",
-        "#deebf7",
-        "#d2e3f3",
-        "#c6dbef",
-        "#b3d2e9",
-        "#9ecae1",
-        "#85bcdb",
-        "#6baed6",
-        "#57a0ce",
-        "#4292c6",
-        "#3082be",
-        "#2171b5",
-        "#1361a9",
-        "#08519c",
-        "#0b4083",
-        "#08306b"
-    ]
+    "mapToken" : "pk.eyJ1IjoiZ2VybXg1MDAwIiwiYSI6ImNrcDh5emhzYjBjdnAyeHBncWdneno5Y28ifQ.-wwlBukqjRbgD-2YOcPQbQ"
 
 }

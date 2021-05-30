@@ -1,7 +1,9 @@
 # Panavia by Alex Arbuckle #
+# pk.eyJ1IjoiZ2VybXg1MDAwIiwiYSI6ImNrcGJldzBlaDBwdHcydnBlemxpdWpvNGgifQ.UQpx7nqlgc1KS9f8YCY-dQ
 
 
 import dash
+import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
@@ -56,15 +58,56 @@ def tabHome(tab):
 
     if (tab == 'home'):
 
+        homeMap = {
+
+            'data' : [go.Scattermapbox(
+
+                lat = [40.80105],
+                lon = [-73.945155],
+                mode = 'markers',
+                marker = {'opacity' : 0.5, 'size' : 10},
+                selected = {'marker' : {'opacity' : 1,
+                                        'size' : 15}}
+
+            )],
+
+            'layout' : go.Layout(
+
+                clickmode = 'event+select',
+                margin = {'r' : 0, 't' : 0, 'l' : 0, 'b' : 0},
+                mapbox = {'accesstoken' : settings['mapToken'],
+                          'style' : 'dark',
+                          'zoom' : 10,
+                          'pitch' : 30,
+                          'center' : {'lat' : 40.80105,
+                                      'lon' : -73.945155
+
+                                      }
+
+                          }
+
+            )
+
+        }
+
         return html.Div([
 
             html.Div([
 
-                html.H1('home')
+                dcc.Graph(id = 'homeMap',
+                          figure = homeMap,
+                          config = {'displayModeBar' : False},
+                          style = {'borderRadius' : 5})
 
             ], style = settings['homeMap'])
 
         ], style = settings['panaviaTab'])
+
+@app.callback(Output('click-data', 'children'), Input('homeMap', 'clickData'))
+def sss(clickData):
+    '''  '''
+
+    print(clickData)
 
 
 def tabCreate(tab):
