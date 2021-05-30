@@ -1,16 +1,12 @@
 # Panavia by Alex Arbuckle #
 
 
-from panaviaTabs.tabsHome import tabHome
-from panaviaTabs.tabsOpen import tabOpen
-from panaviaTabs.tabsCreate import tabCreate
-from panaviaFunctions.functionsGetJSON import getJSON
-
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
-
+from panaviaFunctions.functionsGetJSON import getJSON
+from panaviaFunctions.functionsSetJSON import setJSON
 
 app = dash.Dash()
 settings = getJSON('settingsStyle.json')
@@ -53,6 +49,46 @@ def tabFunction(tab):
     '''  '''
 
     return {'home' : tabHome(tab), 'create' : tabCreate(tab), 'open' : tabOpen(tab)}[tab]
+
+
+def tabHome(tab):
+    '''  '''
+
+    if (tab == 'home'):
+
+        return html.Div([
+
+            html.Div([
+
+                html.H1('home')
+
+            ], style = settings['homeMap'])
+
+        ], style = settings['panaviaTab'])
+
+
+def tabCreate(tab):
+    '''  '''
+
+    if (tab == 'create'):
+
+        return html.Div([
+
+            html.H1('create')
+
+        ], style = settings['panaviaTab'])
+
+
+def tabOpen(tab):
+    '''  '''
+
+    if (tab == 'open'):
+
+        return html.Div([
+
+            html.H1('load')
+
+        ], style = settings['panaviaTab'])
 
 
 if (__name__ == '__main__'):
