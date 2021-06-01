@@ -66,6 +66,7 @@ def panaviaHome(arg):
                 html.Div([
 
                     dcc.Dropdown(id = 'dropdownId',
+                                 placeholder = 'Search Wheel Name',
                                  style = setting['panaviaHome']['homeDropdown'],
                                  options = [{'label' : i, 'value' : i} for i in range(10)])
 
@@ -121,11 +122,33 @@ def panaviaCreate(arg):
 
     if (arg == 'createValue'):
 
+        setting = getJSON('settingStyle.json')
         return html.Div([
 
+            html.Div([
 
+                html.Div([
 
-        ], style = setting['panaviaContent'])
+                    dcc.Input(value = '',
+                              type = 'text',
+                              id = 'inputId',
+                              placeholder = 'Wheel Name',
+                              style = setting['panaviaCreate']['createInput'])
+
+                ]),
+
+                html.Div([
+
+                    dcc.Textarea(value = '',
+                                 id = 'textareaId',
+                                 placeholder = 'Wheel Description',
+                                 style = setting['panaviaCreate']['createTextarea'])
+
+                ])
+
+            ], style = setting['panaviaContent'])
+
+        ])
 
 
 def panaviaOpen(arg):

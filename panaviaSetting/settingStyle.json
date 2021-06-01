@@ -85,6 +85,27 @@
   },
 
   "panaviaCreate" : {
+    "createInput" : {
+      "margin" : 5,
+      "width" : "98.45%",
+      "borderRadius" : 5,
+      "fontFamily" : "sans serif",
+      "border" : "2.5px solid #282828"
+    },
+    "createTextarea" : {
+      "margin" : 5,
+      "height" : 100,
+      "width" : "98.45%",
+      "borderRadius" : 5,
+      "fontFamily" : "sans serif",
+      "border" : "2.5px solid #282828"
+    },
+    "style" : {
+      "margin" : 5,
+      "borderRadius" : 5,
+      "backgroundColor" : "#181818",
+      "border" : "2.5px solid #282828"
+    }
   },
 
   "panaviaContent" : {
