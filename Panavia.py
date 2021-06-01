@@ -161,7 +161,7 @@ def panaviaCreate(arg):
                                          style_cell = setting['panaviaCreate']['createDataTable']['style_cell'],
                                          style_header = setting['panaviaCreate']['createDataTable']['style_header'])
 
-                ], style = setting['panaviaCreate']['createDataTable']['style'])
+                    ], style = setting['panaviaCreate']['createDataTable']['style'])
 
             ], style = setting['panaviaContent'])
 
@@ -184,4 +184,4 @@ def panaviaOpen(arg):
 
 if (__name__ == '__main__'):
 
-    app.run_server()
+    app.run_server(port = 8888)
