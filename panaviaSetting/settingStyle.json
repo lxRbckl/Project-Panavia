@@ -38,7 +38,7 @@
       "fontFamily" : "sans serif",
       "textAlign" : "center"
     },
-    "homeChoropleth" : {
+    "homeGraph" : {
       "mode" : "markers",
       "marker" : {
         "size" : 10,
@@ -82,6 +82,9 @@
       "backgroundColor" : "#181818",
       "border" : "2.5px solid #282828"
     }
+  },
+
+  "panaviaCreate" : {
   },
 
   "panaviaContent" : {

@@ -47,7 +47,7 @@ app.layout = html.Div([
 
 
 @app.callback(Output('menuContent', 'children'), Input('menuId', 'value'))
-def contentFunction(arg):
+def menuFunction(arg):
     '''  '''
 
     return {'homeValue' : panaviaHome(arg), 'createValue' : panaviaCreate(arg), 'openValue' : panaviaOpen(arg)}[arg]
@@ -59,35 +59,13 @@ def panaviaHome(arg):
     if (arg == 'homeValue'):
 
         setting = getJSON('settingStyle.json')
-        homeFigure = {'data' : [go.Scattermapbox(
-
-                lat = [],
-                lon = [],
-                customdata = [],
-                mode = setting['panaviaHome']['homeChoropleth']['mode'],
-                marker = setting['panaviaHome']['homeChoropleth']['marker'],
-                selected = setting['panaviaHome']['homeChoropleth']['selected']
-
-            )],
-
-            'layout' : go.Layout(
-
-                mapbox = setting['panaviaHome']['homeChoropleth']['mapbox'],
-                margin = setting['panaviaHome']['homeChoropleth']['margin'],
-                clickmode = setting['panaviaHome']['homeChoropleth']['clickmode']
-
-            )
-
-        }
-
         return html.Div([
 
             html.Div([
 
                 html.Div([
 
-                    dcc.Dropdown(id = 'homeDropdown',
-                                 placeholder = 'Select Wheel',
+                    dcc.Dropdown(id = 'dropdownId',
                                  style = setting['panaviaHome']['homeDropdown'],
                                  options = [{'label' : i, 'value' : i} for i in range(10)])
 
@@ -99,16 +77,40 @@ def panaviaHome(arg):
 
                 html.Div([
 
-                    dcc.Graph(id = 'graphId',
-                              figure = homeFigure,
-                              style = setting['panaviaHome']['graph']['style'],
-                              config = setting['panaviaHome']['graph']['config'])
+                    dcc.Graph(id = 'graphId')
 
                 ], style = setting['panaviaHome']['style'])
 
             ], style = setting['panaviaContent'])
 
         ])
+
+
+@app.callback(Output('graphId', 'figure'), Input('dropdownId', 'value'))
+def homeFunction(arg):
+    '''  '''
+
+    setting = getJSON('settingStyle.json')
+    return {'data' : [go.Scattermapbox(
+
+        lat = [],
+        lon = [],
+        customdata = [],
+        mode = setting['panaviaHome']['homeGraph']['mode'],
+        marker = setting['panaviaHome']['homeGraph']['marker'],
+        selected = setting['panaviaHome']['homeGraph']['selected']
+
+        )],
+
+        'layout' : go.Layout(
+
+            mapbox = setting['panaviaHome']['homeGraph']['mapbox'],
+            margin = setting['panaviaHome']['homeGraph']['margin'],
+            clickmode = setting['panaviaHome']['homeGraph']['clickmode']
+
+        )
+
+    }
 
 
 def panaviaCreate(arg):
@@ -118,7 +120,7 @@ def panaviaCreate(arg):
 
         return html.Div([
 
-
+            html.H1('create')
 
         ], style = setting['panaviaContent'])
 
@@ -130,7 +132,7 @@ def panaviaOpen(arg):
 
         return html.Div([
 
-
+            html.H1('open')
 
         ], style = setting['panaviaContent'])
 
