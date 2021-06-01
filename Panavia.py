@@ -58,21 +58,23 @@ def panaviaHome(arg):
 
     if (arg == 'homeValue'):
 
-        homeGraph = {'data' : [go.Scattermapbox(
+        setting = getJSON('settingStyle.json')
+        homeFigure = {'data' : [go.Scattermapbox(
 
                 lat = [],
                 lon = [],
                 customdata = [],
-                marker = 0,
-                selected = 0
+                mode = setting['panaviaHome']['homeChoropleth']['mode'],
+                marker = setting['panaviaHome']['homeChoropleth']['marker'],
+                selected = setting['panaviaHome']['homeChoropleth']['selected']
 
             )],
 
             'layout' : go.Layout(
 
-                clickmode = '',
-                margin = {},
-                mapbox = {}
+                mapbox = setting['panaviaHome']['homeChoropleth']['mapbox'],
+                margin = setting['panaviaHome']['homeChoropleth']['margin'],
+                clickmode = setting['panaviaHome']['homeChoropleth']['clickmode']
 
             )
 
@@ -84,7 +86,10 @@ def panaviaHome(arg):
 
                 html.Div([
 
-                    dcc.Graph(id = '')
+                    dcc.Graph(id = 'graphId',
+                              figure = homeFigure,
+                              style = setting['panaviaHome']['graph']['style'],
+                              config = setting['panaviaHome']['graph']['config'])
 
                 ])
 
