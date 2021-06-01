@@ -34,6 +34,10 @@
   },
 
   "panaviaHome" : {
+    "homeDropdown": {
+      "fontFamily" : "sans serif",
+      "textAlign" : "center"
+    },
     "homeChoropleth" : {
       "mode" : "markers",
       "marker" : {

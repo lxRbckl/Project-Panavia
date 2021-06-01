@@ -86,6 +86,19 @@ def panaviaHome(arg):
 
                 html.Div([
 
+                    dcc.Dropdown(id = 'homeDropdown',
+                                 placeholder = 'Select Wheel',
+                                 style = setting['panaviaHome']['homeDropdown'],
+                                 options = [{'label' : i, 'value' : i} for i in range(10)])
+
+                ], style = setting['panaviaHome']['style'])
+
+            ], style = setting['panaviaContent']),
+
+            html.Div([
+
+                html.Div([
+
                     dcc.Graph(id = 'graphId',
                               figure = homeFigure,
                               style = setting['panaviaHome']['graph']['style'],
@@ -105,7 +118,7 @@ def panaviaCreate(arg):
 
         return html.Div([
 
-            html.H1('create')
+
 
         ], style = setting['panaviaContent'])
 
@@ -117,7 +130,7 @@ def panaviaOpen(arg):
 
         return html.Div([
 
-            html.H1('open')
+
 
         ], style = setting['panaviaContent'])
 
