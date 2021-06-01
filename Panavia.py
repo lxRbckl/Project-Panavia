@@ -2,6 +2,7 @@
 
 
 import dash
+import dash_table
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
@@ -65,8 +66,8 @@ def panaviaHome(arg):
 
                 html.Div([
 
+                    # add value of most recent
                     dcc.Dropdown(id = 'dropdownId',
-                                 placeholder = 'Search Wheel Name',
                                  style = setting['panaviaHome']['homeDropdown'],
                                  options = [{'label' : i, 'value' : i} for i in range(10)])
 
@@ -146,7 +147,25 @@ def panaviaCreate(arg):
 
                 ])
 
+            ], style = setting['panaviaContent']),
+
+            #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
+
+            html.Div([
+
+                html.Div([
+
+                    dash_table.DataTable(editable = True,
+                                         id = 'dataTableId',
+                                         columns = [{'name' : i, 'id' : i} for i in setting['wheelSpeed']],
+                                         style_cell = setting['panaviaCreate']['createDataTable']['style_cell'],
+                                         style_header = setting['panaviaCreate']['createDataTable']['style_header'])
+
+                ], style = setting['panaviaCreate']['createDataTable']['style'])
+
             ], style = setting['panaviaContent'])
+
+            #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
 
         ])
 
