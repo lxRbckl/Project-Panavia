@@ -116,7 +116,9 @@
         "fontWeight" : "bold"
       },
       "style" : {
-        "padding" : 5
+        "padding" : 5,
+        "borderRadius" : 5,
+        "border" : "2.5px solid #282828"
       }
     },
     "style" : {
