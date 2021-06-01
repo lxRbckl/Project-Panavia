@@ -38,7 +38,7 @@
       "fontFamily" : "sans serif",
       "textAlign" : "center"
     },
-    "homeGraph" : {
+    "homeFigure" : {
       "mode" : "markers",
       "marker" : {
         "size" : 10,
@@ -68,7 +68,7 @@
         }
       }
     },
-    "graph" : {
+    "homeGraph" : {
       "config" : {
         "displayModeBar" : false
       },

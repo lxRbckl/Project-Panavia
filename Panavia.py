@@ -77,7 +77,9 @@ def panaviaHome(arg):
 
                 html.Div([
 
-                    dcc.Graph(id = 'graphId')
+                    dcc.Graph(id = 'graphId',
+                              style = setting['panaviaHome']['homeGraph']['style'],
+                              config = setting['panaviaHome']['homeGraph']['config'])
 
                 ], style = setting['panaviaHome']['style'])
 
@@ -90,23 +92,24 @@ def panaviaHome(arg):
 def homeFunction(arg):
     '''  '''
 
+    # add figure json and incorporate it
     setting = getJSON('settingStyle.json')
     return {'data' : [go.Scattermapbox(
 
         lat = [],
         lon = [],
         customdata = [],
-        mode = setting['panaviaHome']['homeGraph']['mode'],
-        marker = setting['panaviaHome']['homeGraph']['marker'],
-        selected = setting['panaviaHome']['homeGraph']['selected']
+        mode = setting['panaviaHome']['homeFigure']['mode'],
+        marker = setting['panaviaHome']['homeFigure']['marker'],
+        selected = setting['panaviaHome']['homeFigure']['selected']
 
         )],
 
         'layout' : go.Layout(
 
-            mapbox = setting['panaviaHome']['homeGraph']['mapbox'],
-            margin = setting['panaviaHome']['homeGraph']['margin'],
-            clickmode = setting['panaviaHome']['homeGraph']['clickmode']
+            mapbox = setting['panaviaHome']['homeFigure']['mapbox'],
+            margin = setting['panaviaHome']['homeFigure']['margin'],
+            clickmode = setting['panaviaHome']['homeFigure']['clickmode']
 
         )
 
@@ -120,7 +123,7 @@ def panaviaCreate(arg):
 
         return html.Div([
 
-            html.H1('create')
+
 
         ], style = setting['panaviaContent'])
 
