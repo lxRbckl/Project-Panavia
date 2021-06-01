@@ -91,7 +91,7 @@ def panaviaHome(arg):
                               style = setting['panaviaHome']['graph']['style'],
                               config = setting['panaviaHome']['graph']['config'])
 
-                ])
+                ], style = setting['panaviaHome']['style'])
 
             ], style = setting['panaviaContent'])
 

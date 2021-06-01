@@ -71,6 +71,12 @@
       "style" : {
         "borderRadius" : 5
       }
+    },
+    "style" : {
+      "margin" : 5,
+      "borderRadius" : 5,
+      "backgroundColor" : "#181818",
+      "border" : "2.5px solid #282828"
     }
   },
 
