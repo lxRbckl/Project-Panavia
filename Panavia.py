@@ -149,8 +149,6 @@ def panaviaCreate(arg):
 
             ], style = setting['panaviaContent']),
 
-            #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
-
             html.Div([
 
                 html.Div([
@@ -165,8 +163,6 @@ def panaviaCreate(arg):
                     ], style = setting['panaviaCreate']['createDataTable']['style'])
 
             ], style = setting['panaviaContent'])
-
-            #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #   #
 
         ])
 
