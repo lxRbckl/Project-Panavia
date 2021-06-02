@@ -116,7 +116,7 @@
         "fontWeight" : "bold"
       },
       "style" : {
-        "margin" : 5,
+        "margin" : 10,
         "borderRadius" : 5,
         "border" : "2.5px solid #282828"
       }

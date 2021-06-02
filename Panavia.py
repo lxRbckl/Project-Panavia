@@ -157,6 +157,7 @@ def panaviaCreate(arg):
 
                     dash_table.DataTable(editable = True,
                                          id = 'dataTableId',
+                                         data = [{i : None} for i in setting['wheelSpeed']],
                                          columns = [{'name' : i, 'id' : i} for i in setting['wheelSpeed']],
                                          style_cell = setting['panaviaCreate']['createDataTable']['style_cell'],
                                          style_header = setting['panaviaCreate']['createDataTable']['style_header'])
