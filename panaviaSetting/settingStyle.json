@@ -36,7 +36,6 @@
 
   "panaviaHome" : {
     "homeDropdown": {
-      "textAlign" : "center",
       "fontFamily" : "sans serif",
       "backgroundColor" : "#181818"
     },
@@ -97,7 +96,7 @@
       "background" : "#181818"
     },
     "createTextarea" : {
-      "margin" : 5,
+      "marginLeft" : 5,
       "height" : 100,
       "width" : "98.45%",
       "borderRadius" : 5,
@@ -116,7 +115,7 @@
         "fontWeight" : "bold"
       },
       "style" : {
-        "margin" : 10,
+        "margin" : 5,
         "borderRadius" : 5,
         "border" : "2.5px solid #282828"
       }
