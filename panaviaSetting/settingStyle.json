@@ -36,6 +36,7 @@
 
   "panaviaHome" : {
     "homeDropdown": {
+      "top" : 1,
       "fontFamily" : "sans serif",
       "backgroundColor" : "#181818"
     },
