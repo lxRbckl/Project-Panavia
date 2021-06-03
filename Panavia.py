@@ -91,9 +91,13 @@ def panaviaHome(arg):
 
                 html.Div([
 
-                    html.Button('Submit',
-                                id = 'homeButtonId',
-                                style = setting['panaviaHome']['homeButton'])
+                    html.Button(id = 'homeButtonId',
+                                children = 'Submit',
+                                style = setting['panaviaHome']['homeButton']),
+
+                    html.Button(id = 'homeResponseId',
+                                children = 'Response',
+                                style = setting['panaviaHome']['homeResponse'])
 
                 ])
 
@@ -106,8 +110,8 @@ def panaviaHome(arg):
 def homeFunction(arg):
     '''  '''
 
-    # add figure json and incorporate it
     setting = getJSON('settingStyle.json')
+    # add figure json and incorporate it
     return {'data' : [go.Scattermapbox(
 
         lat = [],
@@ -185,7 +189,7 @@ def panaviaCreate(arg):
                                 style = setting['panaviaCreate']['createButton']),
 
                     html.Button(disabled = True,
-                                children = 'react',
+                                children = 'Response',
                                 id = 'createResponseId',
                                 style = setting['panaviaCreate']['createResponse'])
 
