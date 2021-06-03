@@ -199,7 +199,12 @@
     28,
     9,
     26
-  ]
+  ],
+
+
+  "getLocation" : {
+    "ipinfoKey" : "7ec1c1bc96db16"
+  }
 
 
 }

@@ -6,4 +6,4 @@ def setJSON(arg):
 
     with open('panaviaSetting/settingFigure.json', 'w') as fileVariable:
 
-        dump(fileVariable, arg, indent = 4)
+        dump(arg, fileVariable, indent = 4)

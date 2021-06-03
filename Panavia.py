@@ -9,7 +9,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from panaviaFunction.functionGetJSON import getJSON
 from panaviaFunction.functionSetJSON import setJSON
-
+from panaviaFunction.functionGetLocation import getLocation
 
 
 app = dash.Dash()
@@ -72,7 +72,7 @@ def panaviaHome(arg):
                     dcc.Dropdown(id = 'dropdownId',
                                  placeholder = 'Select Wheel',
                                  style = setting['panaviaHome']['homeDropdown'],
-                                 options = [{'label' : i, 'value' : i} for i in range(10)])
+                                 options = [{'label' : i, 'value' : i} for i in list(figure)[1:]])
 
                 ], style = setting['panaviaHome']['style'])
 
@@ -99,7 +99,7 @@ def panaviaHome(arg):
                                 style = setting['panaviaHome']['homeButton']),
 
                     html.Button(id = 'homeResponseId',
-                                children = figure['Recent'],
+                                children = figure['Recent']['a'], # adjust to title
                                 style = setting['panaviaHome']['homeResponse'])
 
                 ])
@@ -211,7 +211,7 @@ def panaviaCreate(arg):
 
                     html.Button(disabled = True,
                                 id = 'createResponseId',
-                                children = figure['Recent'],
+                                children = figure['Recent']['a'], # adjust to title
                                 style = setting['panaviaCreate']['createResponse'])
 
                 ])
