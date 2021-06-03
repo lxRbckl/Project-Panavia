@@ -135,6 +135,18 @@ def homeFunction(arg):
     }
 
 
+@app.callback(Output('homeResponseId', 'children'),
+              Input('homeButtonId', 'n_clicks'))
+def responseFunction(*args):
+    '''  '''
+
+    if (args[0] != None):
+
+        print('ok')
+
+        return 'ok'
+
+
 def panaviaCreate(arg):
     '''  '''
 
@@ -200,6 +212,9 @@ def panaviaCreate(arg):
             ], style = setting['panaviaContent'])
 
         ])
+
+
+#@app.callback()
 
 
 def panaviaOpen(arg):
