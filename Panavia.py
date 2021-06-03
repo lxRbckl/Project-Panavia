@@ -6,9 +6,10 @@ import dash_table
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
-from panaviaFunction.functionGet import getJSON
-from panaviaFunction.functionSet import setJSON
 from dash.dependencies import Input, Output, State
+from panaviaFunction.functionGetJSON import getJSON
+from panaviaFunction.functionSetJSON import setJSON
+
 
 
 app = dash.Dash()
@@ -115,6 +116,7 @@ def homeFunction(arg):
 
     figure = getJSON('settingFigure.json')
     setting = getJSON('settingStyle.json')
+    arg = 'Recent' if (arg is None) else (arg)
     return {'data' : [go.Scattermapbox(
 
         lat = [],
@@ -145,8 +147,9 @@ def responseFunction(*args):
 
     if (args[0]):
 
-        loadVariable = args[1]
-
+        figure = getJSON('settingFigure.json')
+        figure['Recent'] = figure[args[1]]
+        setJSON(figure)
 
         return args[1]
 
