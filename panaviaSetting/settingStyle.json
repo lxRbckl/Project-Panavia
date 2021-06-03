@@ -42,6 +42,7 @@
     },
     "homeFigure" : {
       "mode" : "markers",
+      "clickmode" : "event+select",
       "marker" : {
         "size" : 10,
         "opacity" : 0.5
@@ -52,7 +53,6 @@
           "opacity" : 1
         }
       },
-      "clickmode" : "event+select",
       "margin" : {
         "t" : 0,
         "b" : 0,
@@ -92,9 +92,9 @@
       "margin" : 5,
       "width" : "98.45%",
       "borderRadius" : 5,
+      "background" : "#181818",
       "fontFamily" : "sans serif",
-      "border" : "2.5px solid #282828",
-      "background" : "#181818"
+      "border" : "2.5px solid #282828"
     },
     "createTextarea" : {
       "marginLeft" : 5,
@@ -102,14 +102,14 @@
       "width" : "98.45%",
       "borderRadius" : 5,
       "fontFamily" : "sans serif",
-      "border" : "2.5px solid #282828",
-      "backgroundColor" : "#181818"
+      "backgroundColor" : "#181818",
+      "border" : "2.5px solid #282828"
     },
     "createDataTable" : {
       "style_cell" : {
         "maxWidth" : 0,
-        "textAlign" : "center",
         "color" : "#f5f5f5",
+        "textAlign" : "center",
         "backgroundColor" : "#181818"
       },
       "style_header" : {
