@@ -6,9 +6,9 @@ import dash_table
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
-from dash.dependencies import Input, Output
 from panaviaFunction.functionGet import getJSON
 from panaviaFunction.functionSet import setJSON
+from dash.dependencies import Input, Output, State
 
 
 app = dash.Dash()
@@ -47,7 +47,8 @@ app.layout = html.Div([
 ])
 
 
-@app.callback(Output('menuContent', 'children'), Input('menuId', 'value'))
+@app.callback(Output('menuContent', 'children'),
+              Input('menuId', 'value'))
 def menuFunction(arg):
     '''  '''
 
@@ -107,7 +108,8 @@ def panaviaHome(arg):
         ])
 
 
-@app.callback(Output('graphId', 'figure'), Input('dropdownId', 'value'))
+@app.callback(Output('graphId', 'figure'),
+              Input('dropdownId', 'value'))
 def homeFunction(arg):
     '''  '''
 
@@ -130,21 +132,23 @@ def homeFunction(arg):
             margin = setting['panaviaHome']['homeFigure']['margin'],
             clickmode = setting['panaviaHome']['homeFigure']['clickmode']
 
-        )
+        ),
 
     }
 
 
 @app.callback(Output('homeResponseId', 'children'),
-              Input('homeButtonId', 'n_clicks'))
+              Input('homeButtonId', 'n_clicks'),
+              State('dropdownId', 'value'))
 def responseFunction(*args):
     '''  '''
 
-    if (args[0] != None):
+    if (args[0]):
 
-        print('ok')
+        loadVariable = args[1]
 
-        return 'ok'
+
+        return args[1]
 
 
 def panaviaCreate(arg):
