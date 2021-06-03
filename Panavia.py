@@ -98,8 +98,8 @@ def panaviaHome(arg):
                                 children = 'Submit',
                                 style = setting['panaviaHome']['homeButton']),
 
-                    html.Button(id = 'homeResponseId',
-                                children = figure['Recent']['a'], # adjust to title
+                    html.Button(children = '',
+                                id = 'homeResponseId',
                                 style = setting['panaviaHome']['homeResponse'])
 
                 ])
@@ -145,13 +145,19 @@ def homeFunction(arg):
 def responseFunction(*args):
     '''  '''
 
+    figure = getJSON('settingFigure.json')
+
     if (args[0]):
 
-        figure = getJSON('settingFigure.json')
         figure['Recent'] = figure[args[1]]
         setJSON(figure)
 
         return args[1]
+
+    return figure['Recent']['a']
+    # an updated version of keeping track of elements
+    # have title as both the key value and as a value within the element
+    # implement this feature further in later elements
 
 
 def panaviaCreate(arg):
