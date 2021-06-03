@@ -78,6 +78,10 @@
         "borderRadius" : 5
       }
     },
+    "homeButton" : {
+      "margin" : 5,
+      "borderRadius" : 5
+    },
     "style" : {
       "margin" : 5,
       "borderRadius" : 5,
@@ -120,6 +124,21 @@
         "borderRadius" : 5,
         "border" : "2.5px solid #282828"
       }
+    },
+    "createButton" : {
+      "margin" : 5,
+      "borderRadius" : 5,
+      "color" : "#f5f5f5",
+      "fontFamily" : "sans serif",
+      "backgroundColor" : "#181818"
+    },
+    "createResponse" : {
+      "margin" : 5,
+      "borderRadius" : 5,
+      "color" : "#f5f5f5",
+      "fontFamily" : "sans serif",
+      "backgroundColor" : "#181818",
+      "border" : "2.5px solid #282828"
     },
     "style" : {
       "margin" : 5,

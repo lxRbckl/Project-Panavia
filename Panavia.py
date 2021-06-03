@@ -66,8 +66,8 @@ def panaviaHome(arg):
 
                 html.Div([
 
-                    # add value of most recent
                     dcc.Dropdown(id = 'dropdownId',
+                                 placeholder = 'Select Wheel',
                                  style = setting['panaviaHome']['homeDropdown'],
                                  options = [{'label' : i, 'value' : i} for i in range(10)])
 
@@ -85,7 +85,19 @@ def panaviaHome(arg):
 
                 ], style = setting['panaviaHome']['style'])
 
-            ], style = setting['panaviaContent'])
+            ], style = setting['panaviaContent']),
+
+            html.Div([
+
+                html.Div([
+
+                    html.Button('Submit',
+                                id = 'homeButtonId',
+                                style = setting['panaviaHome']['homeButton'])
+
+                ])
+
+            ], style= setting['panaviaContent'])
 
         ])
 
@@ -161,6 +173,23 @@ def panaviaCreate(arg):
                                          style_header = setting['panaviaCreate']['createDataTable']['style_header'])
 
                     ], style = setting['panaviaCreate']['createDataTable']['style'])
+
+            ], style = setting['panaviaContent']),
+
+            html.Div([
+
+                html.Div([
+
+                    html.Button(children = 'Submit',
+                                id = 'createButtonId',
+                                style = setting['panaviaCreate']['createButton']),
+
+                    html.Button(disabled = True,
+                                children = 'react',
+                                id = 'createResponseId',
+                                style = setting['panaviaCreate']['createResponse'])
+
+                ])
 
             ], style = setting['panaviaContent'])
 
