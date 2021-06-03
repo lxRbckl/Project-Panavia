@@ -152,7 +152,7 @@ def responseFunction(*args):
         figure['Recent'] = figure[args[1]]
         setJSON(figure)
 
-        return args[1]
+        return figure['Recent']['a']
 
     return figure['Recent']['a']
     # an updated version of keeping track of elements
