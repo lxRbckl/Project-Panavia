@@ -59,6 +59,7 @@ def panaviaHome(arg):
 
     if (arg == 'homeValue'):
 
+        figure = getJSON('settingFigure.json')
         setting = getJSON('settingStyle.json')
         return html.Div([
 
@@ -96,7 +97,7 @@ def panaviaHome(arg):
                                 style = setting['panaviaHome']['homeButton']),
 
                     html.Button(id = 'homeResponseId',
-                                children = 'Response',
+                                children = figure['Recent'],
                                 style = setting['panaviaHome']['homeResponse'])
 
                 ])
@@ -107,7 +108,7 @@ def panaviaHome(arg):
 
 
 @app.callback(Output('graphId', 'figure'), Input('dropdownId', 'value'))
-def homeFunction(arg):
+def homeFunction(*args):
     '''  '''
 
     setting = getJSON('settingStyle.json')
@@ -139,6 +140,7 @@ def panaviaCreate(arg):
 
     if (arg == 'createValue'):
 
+        figure = getJSON('settingFigure.json')
         setting = getJSON('settingStyle.json')
         return html.Div([
 
@@ -189,8 +191,8 @@ def panaviaCreate(arg):
                                 style = setting['panaviaCreate']['createButton']),
 
                     html.Button(disabled = True,
-                                children = 'Response',
                                 id = 'createResponseId',
+                                children = figure['Recent'],
                                 style = setting['panaviaCreate']['createResponse'])
 
                 ])
