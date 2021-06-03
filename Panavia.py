@@ -111,8 +111,8 @@ def panaviaHome(arg):
 def homeFunction(*args):
     '''  '''
 
+    figure = getJSON('settingFigure.json')
     setting = getJSON('settingStyle.json')
-    # add figure json and incorporate it
     return {'data' : [go.Scattermapbox(
 
         lat = [],
