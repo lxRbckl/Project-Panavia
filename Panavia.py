@@ -108,7 +108,7 @@ def panaviaHome(arg):
 
 
 @app.callback(Output('graphId', 'figure'), Input('dropdownId', 'value'))
-def homeFunction(*args):
+def homeFunction(arg):
     '''  '''
 
     figure = getJSON('settingFigure.json')
