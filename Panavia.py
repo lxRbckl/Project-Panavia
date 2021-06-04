@@ -214,7 +214,7 @@ def panaviaCreate(arg):
 
                     html.Button(disabled = True,
                                 id = 'createResponseId',
-                                children = figure['Recent']['a'], # adjust to title
+                                children = '',
                                 style = setting['panaviaCreate']['createResponse'])
 
                 ])
@@ -224,8 +224,16 @@ def panaviaCreate(arg):
         ])
 
 
-#@app.callback()
+@app.callback(Output('createResponseId', 'children'),
+              Input('createButtonId', 'n_clicks'),
+              State('textareaId', 'value'),
+              State('inputId', 'value'))
+def functionResponse(*args):
+    '''  '''
 
+    print(args)
+
+    return 'ok'
 
 def panaviaOpen(arg):
     '''  '''
