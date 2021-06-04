@@ -194,16 +194,16 @@ def panaviaCreate(arg):
 
             html.Div([
 
-                html.Div([
+                #html.Div([
 
-                    dash_table.DataTable(editable = True,
-                                         id = 'dataTableId',
-                                         data = [{i : None} for i in setting['wheelSpeed']],
-                                         columns = [{'name' : i, 'id' : i} for i in setting['wheelSpeed']],
-                                         style_cell = setting['panaviaCreate']['createDataTable']['style_cell'],
-                                         style_header = setting['panaviaCreate']['createDataTable']['style_header'])
+                dash_table.DataTable(id = 'dataTableId',
+                                     columns = [{'name' : i, 'id' : i} for i in setting['wheelSpeed']],
+                                     style_cell = setting['panaviaCreate']['createDataTable']['style_cell'],
+                                     style_header = setting['panaviaCreate']['createDataTable']['style_header'],
+                                     data = [{j : None for j in setting['wheelSpeed']} for i in setting['wheelSpeed']],
+                                     editable = True)
 
-                    ], style = setting['panaviaCreate']['createDataTable']['style'])
+                    #], style = setting['panaviaCreate']['createDataTable']['style'])
 
             ], style = setting['panaviaContent']),
 
