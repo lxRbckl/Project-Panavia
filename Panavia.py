@@ -155,9 +155,6 @@ def responseFunction(*args):
         return figure['Recent']['a']
 
     return figure['Recent']['a']
-    # an updated version of keeping track of elements
-    # have title as both the key value and as a value within the element
-    # implement this feature further in later elements
 
 
 def panaviaCreate(arg):
