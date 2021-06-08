@@ -127,4 +127,4 @@ def buttonFunction(*args):
 
     except:
 
-        return None
+        return (None, [])

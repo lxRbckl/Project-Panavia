@@ -55,7 +55,7 @@
     }
   },
   "layoutMapbox" : {
-    "zoom" : 10,
+    "zoom" : 12,
     "pitch" : 30,
     "style" : "dark",
     "accesstoken" : "pk.eyJ1IjoiZ2VybXg1MDAwIiwiYSI6ImNrcGt3MXZsbTBwdTMyd3BhM3F4ZzZ2ajYifQ.x-sGfG_hq92fRT5O8MXfSw",
