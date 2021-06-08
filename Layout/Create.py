@@ -78,15 +78,14 @@ def buttonFunction(*args):
 
     try:
 
-        graph = getGraph()
-
         if (args[3]):
 
-            if (args[3] in graph.keys()):
+            if (args[3] in getGraph().keys()):
 
                 return (True, getGraph()['Recent']['Title'])
 
             dictVariable = {}
+            graph = getGraph()
             lat, lon = getCenter()
             dictVariable['lat'] = lat
             dictVariable['lon'] = lon

@@ -85,8 +85,9 @@ def buttonFunction(*args):
             dictVariable['lat'] = graph['Recent']['lat']
             dictVariable['lon'] = graph['Recent']['lon']
 
-            graph[graph['Recent']['Title']] = dictVariable
+            del graph[graph['Recent']['Title']]
             graph['Recent'] = dictVariable
+            graph[args[1]] = dictVariable
             setGraph(graph)
 
         graph = getGraph()
