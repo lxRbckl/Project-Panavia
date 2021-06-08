@@ -1,0 +1,74 @@
+{
+  "dropdownStyle" : {
+    "marginTop" : 3,
+    "border" : "0px",
+    "borderRadius" : 5,
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#181818"
+  },
+  "graphStyle" : {
+    "borderRadius" : 5,
+    "backgroundColor" : "#181818",
+    "border" : "2.5px solid #282828"
+  },
+  "graphConfig" : {
+    "displayModeBar" : false
+  },
+  "buttonStyleA" : {
+    "margin" : 5,
+    "borderRadius" : 5,
+    "color" : "#f5f5f5",
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#282828",
+    "border" : "2.25px solid #282828"
+  },
+  "buttonStyleB" : {
+    "margin" : 5,
+    "float" : "right",
+    "borderRadius" : 5,
+    "color" : "#f5f5f5",
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#282828",
+    "border" : "2.25px solid #282828"
+  },
+  "divDivStyle" : {
+    "borderRadius" : 5,
+    "backgroundColor" : "#181818",
+    "border" : "2.5px solid #282828"
+  },
+  "divStyle" : {
+    "margin" : 10,
+    "padding" : 10,
+    "borderRadius" : 5,
+    "backgroundColor" : "#121212"
+  },
+  "dataMode" : "markers",
+  "dataMarker" : {
+    "size" : 15,
+    "opacity" : 0.75
+  },
+  "dataSelected" : {
+    "marker" : {
+      "size" : 15,
+      "opacity" : 0.75,
+      "color" : "red"
+    }
+  },
+  "layoutMapbox" : {
+    "zoom" : 10,
+    "pitch" : 30,
+    "style" : "dark",
+    "accesstoken" : "pk.eyJ1IjoiZ2VybXg1MDAwIiwiYSI6ImNrcGt3MXZsbTBwdTMyd3BhM3F4ZzZ2ajYifQ.x-sGfG_hq92fRT5O8MXfSw",
+    "center" : {
+      "lat" : 0,
+      "lon" : 0
+    }
+  },
+  "layoutMargin" : {
+    "t" : 0,
+    "b" : 0,
+    "l" : 0,
+    "r" : 0
+  },
+  "layoutClickmode" : "event+select"
+}
