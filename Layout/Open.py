@@ -9,6 +9,9 @@ from Panavia import app, setGraph, getGraph, getStyle
 style = getStyle('Open')
 openLayout = html.Div([
 
+    dcc.ConfirmDialog(id = 'openConfirmdialogId',
+                      message = 'Wheel already exists.'),
+
     html.Div([
 
         html.Div([
@@ -66,6 +69,7 @@ openLayout = html.Div([
               Output('openTextareaId', 'value'),
               Output('openDatatableId', 'data'),
               Output('openButtonIdB', 'children'),
+              Output('openConfirmdialogId', 'displayed'),
               Input('openButtonIdA', 'n_clicks'),
               State('openInputId', 'value'),
               State('openTextareaId', 'value'),
@@ -76,6 +80,15 @@ def buttonFunction(*args):
     try:
 
         if (args[0]):
+
+            if (args[1] in getGraph().keys()):
+
+                graph = getGraph()
+                return (graph['Recent']['Title'],
+                        args[2],
+                        args[3],
+                        graph['Recent']['Title'],
+                        True)
 
             dictVariable = {}
             graph = getGraph()
@@ -94,8 +107,9 @@ def buttonFunction(*args):
         return (graph['Recent']['Title'],
                 graph['Recent']['Description'],
                 graph['Recent']['Data'],
-                graph['Recent']['Title'])
+                graph['Recent']['Title'],
+                False)
 
     except:
 
-        return (None, None, None, None)
+        return (None, None, None, None, False)
