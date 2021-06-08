@@ -16,13 +16,18 @@ path = path.replace('Layout', '')
 def getGraph():
     '''  '''
 
+    print('getGraph')
+
     with open('{}/Panavia.json'.format(path), 'r') as fileVariable:
+
 
         return load(fileVariable)
 
 
 def setGraph(arg):
     '''  '''
+
+    print('setGraph')
 
     with open('{}/Panavia.json'.format(path), 'w') as fileVariable:
 

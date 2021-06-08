@@ -13,9 +13,12 @@ homeLayout = html.Div([
         html.Div([
 
             dcc.Dropdown(id = 'homeDropdownId',
-                         options = list(getGraph()),
                          placeholder = 'Search Wheel',
-                         style = style['dropdownStyle'])
+                         style = style['dropdownStyle'],
+                         options = [{'label' : i['Title'],
+                                     'value' : i['Title']}
+
+                                    for i in list(getGraph().values())[1:]])
 
         ], style = style['divDivStyle'])
 
@@ -75,17 +78,17 @@ def dropdownFunction(arg):
             selected = style['dataSelected'],
             lat = [i['lat'] for i in graph.values()],
             lon = [i['lon'] for i in graph.values()],
-            hovertext = [i['title'] for i in graph.values()],
-            customdata = [i['title'] for i in graph.values()])
+            hovertext = [i['Title'] for i in graph.values()],
+            customdata = [i['Title'] for i in graph.values()])
 
         ],
 
         'layout' : go.Layout(
 
-            uirevision= 'foo',
-            mapbox = layoutMapbox,
+            clickmode = style['layoutClickmode'],
             margin = style['layoutMargin'],
-            clickmode = style['layoutClickmode'])
+            mapbox = layoutMapbox,
+            uirevision= 'foo')
 
     }
 
@@ -101,6 +104,7 @@ def graphFunction(arg):
 
 
 @app.callback(Output('homeButtonIdB', 'children'),
+              Output('homeDropdownId', 'options'),
               Input('homeButtonIdA', 'n_clicks'),
               State('homeDropdownId', 'value'))
 def buttonFunction(*args):
@@ -115,7 +119,11 @@ def buttonFunction(*args):
             graph['Recent'] = graph[args[1]]
             setGraph(graph)
 
-        return graph['Recent']['Title']
+        return (getGraph()['Recent']['Title'],
+                [{'label' : i['Title'],
+                  'value' : i['Title']}
+
+                 for i in list(getGraph().values())[1:]])
 
     except:
 
