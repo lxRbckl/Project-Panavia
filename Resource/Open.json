@@ -31,7 +31,7 @@
   "datatableStyle_header" : {
     "fontWeight" : "bold"
   },
-    "wheelSpeed" : [
+  "wheelSpeed" : [
     34,
     15,
     3,
