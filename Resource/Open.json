@@ -1,0 +1,89 @@
+{
+  "inputStyle" : {
+    "margin" : 5,
+    "width" : "98.45%",
+    "borderRadius" : 5,
+    "background" : "#181818",
+    "fontFamily" : "sans serif",
+    "border" : "2.5px solid #282828"
+  },
+  "textareaStyle" : {
+    "height" : 100,
+    "marginLeft" : 5,
+    "width" : "98.45%",
+    "borderRadius" : 5,
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#181818",
+    "border" : "2.5px solid #282828"
+  },
+  "divStyle" : {
+    "margin" : 10,
+    "padding" : 5,
+    "borderRadius" : 5,
+    "backgroundColor" : "#121212"
+  },
+  "datatableStyle_cell" : {
+    "maxWidth" : 0,
+    "color" : "#f5f5f5",
+    "textAlign" : "center",
+    "backgroundColor" : "#181818"
+  },
+  "datatableStyle_header" : {
+    "fontWeight" : "bold"
+  },
+    "wheelSpeed" : [
+    34,
+    15,
+    3,
+    24,
+    36,
+    13,
+    1,
+    37,
+    27,
+    10,
+    25,
+    29,
+    12,
+    8,
+    19,
+    31,
+    18,
+    6,
+    21,
+    33,
+    16,
+    4,
+    23,
+    35,
+    14,
+    2,
+    0,
+    28,
+    9,
+    26
+  ],
+  "divDivStyle" : {
+    "margin" : 5,
+    "borderRadius" : 5,
+    "background" : "#181818",
+    "border" : "2.5px solid #282828"
+  },
+  "buttonStyleA" : {
+    "margin" : 5,
+    "borderRadius" : 5,
+    "color" : "#f5f5f5",
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#282828",
+    "border" : "2.25px solid #282828"
+  },
+  "buttonStyleB" : {
+    "margin" : 5,
+    "float" : "right",
+    "borderRadius" : 5,
+    "color" : "#f5f5f5",
+    "fontFamily" : "sans serif",
+    "backgroundColor" : "#282828",
+    "border" : "2.25px solid #282828"
+  }
+}
