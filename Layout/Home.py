@@ -60,8 +60,8 @@ def dropdownFunction(arg):
     if (arg):
 
         layoutMapbox = style['layoutMapbox']
-        layoutMapbox['center'] = {'lat' : graph[arg]['lat'],
-                                  'lon' : graph[arg]['lon']}
+        layoutMapbox['center'] = {'lat' : graph['Recent']['lat'],
+                                  'lon' : graph['Recent']['lon']}
 
     else:
 
