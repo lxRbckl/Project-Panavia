@@ -103,6 +103,7 @@ def buttonFunction(*args):
             graph[args[1]] = dictVariable
             setGraph(graph)
 
+        graph = getGraph()
         return (graph['Recent']['Title'],
                 graph['Recent']['Description'],
                 graph['Recent']['Data'],
