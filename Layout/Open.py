@@ -35,7 +35,7 @@ openLayout = html.Div([
         html.Div([
 
             dt.DataTable(editable = True,
-                         id = 'openDatatableId',
+                         id = 'openDatatableIdA',
                          style_cell = style['datatableStyle_cell'],
                          style_header = style['datatableStyle_header'],
                          columns = [{'name' : str(i),
@@ -60,6 +60,24 @@ openLayout = html.Div([
 
         ], style = style['divDivStyle'])
 
+    ], style = style['divStyle']),
+
+    html.Div([
+
+        # normal
+        html.Div([
+
+            dcc.Graph(id = 'openGraphIdA')
+
+        ], style = style['divDivStyle']),
+
+        # polar plot with pushable rangesliders to get iterative range
+        html.Div([
+
+            html.H1('polar plot')
+
+        ], style = style['divDivStyle'])
+
     ], style = style['divStyle'])
 
 ])
@@ -67,13 +85,13 @@ openLayout = html.Div([
 
 @app.callback(Output('openInputId', 'value'),
               Output('openTextareaId', 'value'),
-              Output('openDatatableId', 'data'),
+              Output('openDatatableIdA', 'data'),
               Output('openButtonIdB', 'children'),
               Output('openConfirmdialogId', 'displayed'),
               Input('openButtonIdA', 'n_clicks'),
               State('openInputId', 'value'),
               State('openTextareaId', 'value'),
-              State('openDatatableId', 'data'))
+              State('openDatatableIdA', 'data'))
 def buttonFunction(*args):
     '''  '''
 
@@ -113,3 +131,13 @@ def buttonFunction(*args):
     except:
 
         return (None, None, None, None, False)
+
+
+@app.callback(Output('openGraphIdA', 'figure'),
+              Input('openDatatableIdA', 'data'))
+def datatableFunction(arg):
+    '''  '''
+
+    for i in arg:
+
+        print(i)

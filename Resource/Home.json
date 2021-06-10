@@ -50,7 +50,7 @@
   "dataSelected" : {
     "marker" : {
       "size" : 15,
-      "opacity" : 0.75,
+      "opacity" : 0.50,
       "color" : "red"
     }
   },
