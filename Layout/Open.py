@@ -81,9 +81,11 @@ def buttonFunction(*args):
 
         if (args[0]):
 
-            if (args[1] in getGraph().keys()):
+            graph = getGraph()
 
-                graph = getGraph()
+            if (args[1] in graph.keys() and graph['Recent']['Title'] != args[1]):
+
+                # graph = getGraph()
                 return (graph['Recent']['Title'],
                         args[2],
                         args[3],
@@ -91,7 +93,7 @@ def buttonFunction(*args):
                         True)
 
             dictVariable = {}
-            graph = getGraph()
+            # graph = getGraph()
             dictVariable['Data'] = args[3]
             dictVariable['Title'] = args[1]
             dictVariable['Description'] = args[2]
