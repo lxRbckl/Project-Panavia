@@ -41,8 +41,14 @@ def getStyle(arg):
 def getCenter():
     '''  '''
 
-    var = getHandler('7ec1c1bc96db16').getDetails(get('http://ip.42.pl/raw').text)
-    return [float(i) + uniform(-0.0099999, 0.0099999) for i in var.loc.split(',')]
+    try:
+
+        var = getHandler('7ec1c1bc96db16').getDetails(get('http://ip.42.pl/raw').text)
+        return [float(i) + uniform(-0.0099999, 0.0099999) for i in var.loc.split(',')]
+
+    except:
+
+        return [39.0941493, -94.5812837]
 
 
 app = dash.Dash(suppress_callback_exceptions = True)

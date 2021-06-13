@@ -74,7 +74,7 @@ openLayout = html.Div([
         # polar plot with pushable rangesliders to get iterative range
         html.Div([
 
-            html.H1('polar plot')
+            dcc.Graph(id = 'openGraphIdB')
 
         ], style = style['divDivStyle'])
 
@@ -138,6 +138,12 @@ def buttonFunction(*args):
 def datatableFunction(arg):
     '''  '''
 
-    for i in arg:
+    try:
 
-        print(i)
+        for row in arg:
+
+            pass
+
+    except:
+
+        return None
