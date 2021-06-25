@@ -153,19 +153,31 @@ def datatableFunctionA(arg):
     figure = make_subplots(rows = 1,
                            shared_yaxes = True,
                            horizontal_spacing = 0.001,
-                           cols = len(dictVariable.keys()))
+                           cols = len(dictVariable.keys()),
+                           subplot_titles = tuple(dictVariable.keys()))
 
+    # TODO:
+    # so the problem we're now having is the wheel speeds are printing in sorted order.
+    # we need to use json wheelSpeed variable to iterate through and put them in order.
+
+    # x-axis : wheel speeds
+    # y-axis : 0-37
+
+    # so this is currently putting them in order- although the data is correct
     for c, i in enumerate(dictVariable.keys()):
 
         figure.add_trace(go.Scatter(
 
-            mode = "markers",
-            showlegend = False,
+            mode = 'markers',
             x = dictVariable[i][1],
             y = dictVariable[i][0],
             marker = style['markerStyle']),
 
         col = (c + 1),
         row = 1)
+
+    figure.update_layout(
+
+        showlegend = False)
 
     return figure
