@@ -159,6 +159,7 @@ def datatableFunctionA(arg):
     # TODO:
     # so the problem we're now having is the wheel speeds are printing in sorted order.
     # we need to use json wheelSpeed variable to iterate through and put them in order.
+    # we also need to continue working on our mutual x-axis problem.
 
     # x-axis : wheel speeds
     # y-axis : 0-37
