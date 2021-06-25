@@ -85,5 +85,9 @@
     "fontFamily" : "sans serif",
     "backgroundColor" : "#282828",
     "border" : "2.25px solid #282828"
+  },
+  "markerStyle" : {
+    "size" : 8,
+    "color" : "blue"
   }
 }

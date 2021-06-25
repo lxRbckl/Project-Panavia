@@ -1,4 +1,5 @@
 import dash_table as dt
+import plotly.express as px
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
@@ -65,14 +66,14 @@ openLayout = html.Div([
 
     html.Div([
 
-        # normal
+        # graph 1
         html.Div([
 
             dcc.Graph(id = 'openGraphIdA')
 
         ], style = style['divDivStyle']),
 
-        # polar plot with pushable rangesliders to get iterative range
+        # graph 2
         html.Div([
 
             dcc.Graph(id = 'openGraphIdB')
@@ -136,7 +137,7 @@ def buttonFunction(*args):
 
 @app.callback(Output('openGraphIdA', 'figure'),
               Input('openDatatableIdA', 'data'))
-def datatableFunction(arg):
+def datatableFunctionA(arg):
     '''  '''
 
     dictVariable, style = {}, getStyle('Open')
@@ -158,14 +159,13 @@ def datatableFunction(arg):
 
         figure.add_trace(go.Scatter(
 
+            mode = "markers",
+            showlegend = False,
             x = dictVariable[i][1],
-            y = dictVariable[i][0]
-
-            ),
+            y = dictVariable[i][0],
+            marker = style['markerStyle']),
 
         col = (c + 1),
-        row = 1
-
-        )
+        row = 1)
 
     return figure
