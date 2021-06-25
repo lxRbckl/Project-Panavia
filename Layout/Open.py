@@ -2,6 +2,7 @@ import dash_table as dt
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
+from plotly.subplots import make_subplots
 from dash.dependencies import Input, Output, State
 from Panavia import app, setGraph, getGraph, getStyle
 
@@ -138,12 +139,33 @@ def buttonFunction(*args):
 def datatableFunction(arg):
     '''  '''
 
-    try:
+    dictVariable, style = {}, getStyle('Open')
+    for key, value in [[k, v] for i in arg for k, v in i.items() if (v)]:
 
-        for row in arg:
+        if (key not in dictVariable.keys()):
 
-            pass
+            dictVariable[key] = [[], []]
 
-    except:
+        dictVariable[key][0].append(value)
+        dictVariable[key][1].append(dictVariable[key][0].count(value))
 
-        return None
+    figure = make_subplots(rows = 1,
+                           shared_yaxes = True,
+                           horizontal_spacing = 0.001,
+                           cols = len(dictVariable.keys()))
+
+    for c, i in enumerate(dictVariable.keys()):
+
+        figure.add_trace(go.Scatter(
+
+            x = dictVariable[i][1],
+            y = dictVariable[i][0]
+
+            ),
+
+        col = (c + 1),
+        row = 1
+
+        )
+
+    return figure
