@@ -1,5 +1,5 @@
 ## Project-Panavia
-> Document trends in biased roulette wheels.
+> Visualize biased roulette wheel data with plotly and dash.
 
 ### Installation
 ```
