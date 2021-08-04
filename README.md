@@ -1,5 +1,5 @@
 ## Project-Panavia
-> Document biased roulette wheels and visualize data with Plotly and Dash.
+> Document biased roulette wheels and visualize data with Plotly and Dash. Spring 2021.
 
 ### Installation
 ```
