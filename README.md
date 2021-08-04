@@ -3,5 +3,6 @@
 
 ### Installation
 ```
-
+cd
+git clone https://github.com/lxRbckl/Project-Panavia.git
 ```
