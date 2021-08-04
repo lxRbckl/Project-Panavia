@@ -1,5 +1,5 @@
 ## Project-Panavia
-> about
+> Document trends in roulette wheels.
 
 ### Installation
 ```
