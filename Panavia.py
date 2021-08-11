@@ -1,6 +1,7 @@
-# Panavia by Alex Arbuckle #
+# Project Panavia by Alex Arbuckle #
 
 
+# Import <
 import dash
 from os import getcwd
 from requests import get
@@ -8,9 +9,14 @@ from random import uniform
 from json import load, dump
 from ipinfo import getHandler
 
+# >
 
+
+# Declaration <
 path = getcwd()
 path = path.replace('Layout', '')
+
+# >
 
 
 def getGraph():
@@ -51,5 +57,8 @@ def getCenter():
         return [39.0941493, -94.5812837]
 
 
+# Run <
 app = dash.Dash(suppress_callback_exceptions = True)
 server = app.server
+
+# >

@@ -1,3 +1,4 @@
+# Import <
 from Home import homeLayout
 from Open import openLayout
 from Create import createLayout
@@ -6,14 +7,21 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output
 
+# >
 
+
+# UI <
 style = getStyle('Menu')
 app.layout = html.Div([
 
     html.Div([
 
+        # Header <
         html.H1('Panavia', style = style['h1Style']),
 
+        # >
+
+        # Tabs <
         dcc.Tabs(value = 'Home',
                  id = 'menuTabsId',
                  children = [
@@ -27,11 +35,18 @@ app.layout = html.Div([
 
                  ])
 
+        # >
+
     ], style = style['divStyle']),
 
+    # Responsive UI <
     html.Div(id = 'menuDivId')
 
+    # >
+
 ])
+
+# >
 
 
 @app.callback(Output('menuDivId', 'children'),

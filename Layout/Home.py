@@ -1,10 +1,14 @@
+# Import <
 import plotly.graph_objs as go
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from Panavia import app, setGraph, getGraph, getStyle, getCenter
 
+# >
 
+
+# UI <
 style = getStyle('Home')
 homeLayout = html.Div([
 
@@ -12,6 +16,7 @@ homeLayout = html.Div([
 
         html.Div([
 
+            # Dropdown <
             dcc.Dropdown(id = 'homeDropdownId',
                          placeholder = 'Search Wheel',
                          style = style['dropdownStyle'],
@@ -20,15 +25,20 @@ homeLayout = html.Div([
 
                                     for i in list(getGraph().values())[1:]])
 
+            # >
+
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle']),
 
     html.Div([
 
+        # Map <
         dcc.Graph(id = 'homeGraphId',
                   style = style['graphStyle'],
                   config = style['graphConfig'])
+
+        # >
 
     ], style = style['divStyle']),
 
@@ -36,18 +46,26 @@ homeLayout = html.Div([
 
         html.Div([
 
+            # Submit <
             html.Button(children = 'Submit',
                         id = 'homeButtonIdA',
                         style = style['buttonStyleA']),
 
+            # >
+
+            # Current <
             html.Button(id = 'homeButtonIdB',
                         style = style['buttonStyleB'])
+
+            # >
 
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle'])
 
 ])
+
+# >
 
 
 @app.callback(Output('homeGraphId', 'figure'),

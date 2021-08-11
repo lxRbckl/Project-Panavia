@@ -1,3 +1,4 @@
+# Import <
 import dash_table as dt
 import plotly.express as px
 import plotly.graph_objs as go
@@ -7,28 +8,43 @@ from plotly.subplots import make_subplots
 from dash.dependencies import Input, Output, State
 from Panavia import app, setGraph, getGraph, getStyle
 
+# >
 
+
+# UI <
 style = getStyle('Open')
 openLayout = html.Div([
 
+    # Error Message <
     dcc.ConfirmDialog(id = 'openConfirmdialogId',
                       message = 'Wheel already exists.'),
 
+    # >
+
     html.Div([
 
+        # Input <
         html.Div([
 
+            # Title <
             dcc.Input(id = 'openInputId',
                       style = style['inputStyle'])
+
+            # >
 
         ]),
 
         html.Div([
 
+            # Description <
             dcc.Textarea(id = 'openTextareaId',
                          style = style['textareaStyle'])
 
+            # >
+
         ])
+
+        # >
 
     ], style = style['divStyle']),
 
@@ -36,6 +52,7 @@ openLayout = html.Div([
 
         html.Div([
 
+            # DataTable <
             dt.DataTable(editable = True,
                          id = 'openDatatableIdA',
                          style_cell = style['datatableStyle_cell'],
@@ -45,6 +62,8 @@ openLayout = html.Div([
 
                                     for i in style['wheelSpeed']])
 
+            # >
+
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle']),
@@ -53,12 +72,18 @@ openLayout = html.Div([
 
         html.Div([
 
+            # Update <
             html.Button(children = 'Update',
                         id = 'openButtonIdA',
                         style = style['buttonStyleA']),
 
+            # >
+
+            # Current <
             html.Button(id = 'openButtonIdB',
                         style = style['buttonStyleB'])
+
+            # >
 
         ], style = style['divDivStyle'])
 
@@ -66,23 +91,29 @@ openLayout = html.Div([
 
     html.Div([
 
-        # graph 1
         html.Div([
 
+            # Graph 1 <
             dcc.Graph(id = 'openGraphIdA')
+
+            # >
 
         ], style = style['divDivStyle']),
 
-        # graph 2
         html.Div([
 
+            # Graph 2 <
             dcc.Graph(id = 'openGraphIdB')
+
+            # >
 
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle'])
 
 ])
+
+# >
 
 
 @app.callback(Output('openInputId', 'value'),

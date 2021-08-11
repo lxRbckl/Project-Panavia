@@ -1,18 +1,27 @@
+# Import <
 import dash_table as dt
 import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from Panavia import app, setGraph, getGraph, getStyle, getCenter
 
+# >
 
+
+# UI <
 style = getStyle('Create')
 createLayout = html.Div([
 
+    # Error Message <
     dcc.ConfirmDialog(id = 'createConfirmdialogId',
                       message = 'Wheel already exists.'),
 
+    # >
+
+    # Input <
     html.Div([
 
+        # Title <
         html.Div([
 
             dcc.Input(id = 'createInputId',
@@ -21,6 +30,9 @@ createLayout = html.Div([
 
         ]),
 
+        # >
+
+        # Description <
         html.Div([
 
             dcc.Textarea(id = 'createTextareaId',
@@ -29,12 +41,18 @@ createLayout = html.Div([
 
         ])
 
+        # >
+
     ], style = style['divStyle']),
+
+    # >
+
 
     html.Div([
 
         html.Div([
 
+            # DataTable <
             dt.DataTable(editable = True,
                          id = 'createDatatableId',
                          style_cell = style['datatableStyle_cell'],
@@ -45,6 +63,8 @@ createLayout = html.Div([
 
                                     for i in style['wheelSpeed']])
 
+            # >
+
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle']),
@@ -53,18 +73,26 @@ createLayout = html.Div([
 
         html.Div([
 
+            # Submit <
             html.Button(children = 'Submit',
                         id = 'createButtonIdA',
                         style = style['buttonStyleA']),
 
+            # >
+
+            # Current <
             html.Button(id = 'createButtonIdB',
                         style = style['buttonStyleB'])
+
+            # >
 
         ], style = style['divDivStyle'])
 
     ], style = style['divStyle'])
 
 ])
+
+# >
 
 
 @app.callback(Output('createConfirmdialogId', 'displayed'),
