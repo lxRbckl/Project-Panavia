@@ -1,4 +1,4 @@
-## [Project Panavia](http://lxrbckl.com/Project-Panavia)
+## [`Project Panavia`](http://lxrbckl.com/Project-Panavia)
 > Model data for visual ballistics on roulette wheels and visualize it with Plotly and Dash. Spring 2021.
 
 ### Installation
