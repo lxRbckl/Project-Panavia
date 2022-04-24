@@ -1,7 +1,7 @@
 ## [`Project Panavia`](http://lxrbckl.com/Project-Panavia)
 > Model data for visual ballistics on roulette wheels and visualize it with Plotly and Dash. Spring 2021.
 
-### Installation
+### `Installation`
 ```
 pip3 install dash
 pip3 install plotly
