@@ -9,6 +9,6 @@
 [`requests`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/requests.md)
 [`random`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/random.md)
 [`ipinfo`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/ipinfo.md)
-[`plotly`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/README.md)
+[`plotly`](https://github.com/lxRbckl/lxRbckl/blob/main/Python/plotly.md)
 
 # 
